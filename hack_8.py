@@ -9,6 +9,12 @@ text: ["a","b"] output => ["2","1"]
 
 
 def fn_hack_8(s):
-    result = s
-    #...
+    s_length = len(s)
+    if s_length % 2 == 0:
+        result = [str(s_length - i) for i in range(s_length)]
+    else:
+        result = [f"{s[s_length - i - 1]}-{s_length - i}" for i in range(s_length)]
+    
     return result
+
+

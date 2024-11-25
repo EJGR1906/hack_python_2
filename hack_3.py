@@ -17,5 +17,26 @@ text: "qux" output => "QvX"
 
 def fn_hack_3(s):
     result = s
-    #...
+    _str = []
+    vowels = {
+        "a":"@",
+        "e":"3",
+        "i":"¡",
+        "o":"0",
+        "u":"v"
+    }
+
+    for txt in result:
+        if txt in vowels:
+            _str.append(vowels[txt])
+        else:
+            _str.append(txt)
+
+    result = "".join(_str).capitalize()
+
+    if result[-1] not in vowels.values():
+        result = result[:-1] + result[-1].upper()
+    
     return result
+
+
